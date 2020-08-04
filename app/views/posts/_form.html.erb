@@ -11,17 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="file">
+    <label class="file-label">
+      <%= form.file_field :featured_image, class: 'file-input' %>
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Escolha a imagem de destaque…
+        </span>
+      </span>
+    </label>
   </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
+  <br>
+
+   <div class="field">
+    <%= form.label 'Título', class: 'label' %>
+    <div class="control">
+      <%= form.text_field :title, class: 'input' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+    <%= form.label 'Autor', class: 'label' %>
+    <div class="control">
+      <%= form.text_field :author, class: 'input' %>
+    </div>
   </div>
+
+   <div class="field">
+    <%= form.label 'Conteúdo', class: 'label' %>
+    <%= form.rich_text_area :content %>
+  </div>
+ 
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit 'Criar', class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Voltar', posts_path, class: 'button is-link is-light' %>
+    </div>
+  </div>
+
 <% end %>
