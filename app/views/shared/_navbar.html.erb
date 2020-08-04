@@ -1,0 +1,40 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://onebitcode.com/wp-content/uploads/2020/01/logo-bg-escuro-400.png" width="auto" height='auto'>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href='/posts/new'>
+          + Nova Publicação
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <% unless user_signed_in? %>
+              <a class="button is-primary" href='/users/sign_up'>
+                <strong>Cadastre-se</strong>
+              </a>
+              <a class="button is-light" href='/users/sign_in'>
+                Entrar
+              </a>
+            <% end %>  
+            <% if user_signed_in? %>
+              <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'button is-light'  %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
