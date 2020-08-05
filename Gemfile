@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'slim', '~> 4.0.1'
 gem 'devise'
+gem 'enumerize', '~> 2.1', '>= 2.1.2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
