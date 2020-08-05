@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+</br></br>
+<h1 class="title">Publicações</h1>
+</br>
 
 <table>
   <thead>
@@ -13,17 +15,27 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.author %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="columns">
+        <div class="column is-four-fifths">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-full is-marginless is-3by1">
+                <%= image_tag post.featured_image %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <a href="<%= post_path(id: post.id) %>"><p class="title is-4"><%= post.author %></p></a>
+                </div>
+              </div>
+              <p>Autor: <%= post.author %> - <%= post.created_at.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
