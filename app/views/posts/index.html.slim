@@ -1,0 +1,18 @@
+p#notice = notice
+h1.title Oi! Seja Bem-vindo :)
+h1.title Estou escrevendo sobre: 
+
+- @posts.each do |post|
+  .columns
+    .column.is-four-fifths
+      .card
+        .card-image
+          figure.image.is-full.is-marginless.is-3by1
+            = image_tag post.featured_image
+        .card-content
+          .media
+            .media-content
+              a href=("#{post_path(id: post.id)}") 
+                p.title.is-4= post.author
+          p
+            | Autor: #{post.author} - #{post.created_at.strftime("%d/%m/%Y")}

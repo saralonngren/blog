@@ -13,4 +13,10 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   has_many :categories
+
+  def reading_time
+    words_per_minute = 150
+    text = Nokogiri::HTML(self.content.body).inner_text
+    (text.scan(/\w+/).length / words_per_minute).to_i
+  end
 end

@@ -1,0 +1,23 @@
+nav.navbar.is-dark aria-label=("main navigation") role="navigation" 
+  .container
+    .navbar-brand
+      a.navbar-item href="/" 
+        img height="auto" src="https://onebitcode.com/wp-content/uploads/2020/01/logo-bg-escuro-400.png" width="auto" /
+      a.navbar-burger.burger aria-expanded="false" aria-label="menu" data-target="navbarBasicExample" role="button" 
+        span aria-hidden="true" 
+        span aria-hidden="true" 
+        span aria-hidden="true" 
+    #navbarBasicExample.navbar-menu
+      .navbar-start
+        a.navbar-item href="/posts/new" 
+          | + Nova Publicação
+      .navbar-end
+        .navbar-item
+          .buttons
+            - unless user_signed_in?
+              a.button.is-primary href="/users/sign_up" 
+                strong Cadastre-se
+              a.button.is-light href="/users/sign_in" 
+                | Entrar
+            - if user_signed_in?
+              = link_to "Sair", destroy_user_session_path, method: :delete, class: 'button is-light'
