@@ -1,16 +1,15 @@
 nav.navbar.is-dark aria-label=("main navigation") role="navigation" 
   .container
-    .navbar-brand
-      a.navbar-item href="/" 
-        img height="auto" src="https://onebitcode.com/wp-content/uploads/2020/01/logo-bg-escuro-400.png" width="auto" /
-      a.navbar-burger.burger aria-expanded="false" aria-label="menu" data-target="navbarBasicExample" role="button" 
-        span aria-hidden="true" 
-        span aria-hidden="true" 
-        span aria-hidden="true" 
     #navbarBasicExample.navbar-menu
       .navbar-start
+        a.navbar-item href="/" 
+          | 💻 Blog
+        a.navbar-item href="/posts/new" 
+          | 📖 Readme
         a.navbar-item href="/posts/new" 
           | + Nova Publicação
+        a.navbar-item href="/categories/new" 
+          | + Nova Categoria  
       .navbar-end
         .navbar-item
           .buttons

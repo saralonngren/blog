@@ -27,7 +27,7 @@
 
   <br>
 
-   <div class="field">
+  <div class="field">
     <%= form.label 'Título', class: 'label' %>
     <div class="control">
       <%= form.text_field :title, class: 'input' %>
@@ -35,13 +35,20 @@
   </div>
 
     <div class="field">
+    <%= form.label 'Subtítulo', class: 'label' %>
+    <div class="control">
+      <%= form.text_field :subtitle, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label 'Autor', class: 'label' %>
     <div class="control">
       <%= form.text_field :author, class: 'input' %>
     </div>
   </div>
 
-   <div class="field">
+  <div class="field">
     <%= form.label 'Conteúdo', class: 'label' %>
     <%= form.rich_text_area :content %>
   </div>
