@@ -1,15 +1,15 @@
 p#notice = notice
-h1.title Oi! Seja Bem-vindo :)
-h1.title Estou escrevendo sobre: 
+.container
+  .row
+    .col-sm-12
+      h2.index-title Oi! Seja Bem-vindo 👋🏻
+.container.categories-container
+  .row
+    .col-sm-12
+      h3.index-categories-title Estou escrevendo sobre: 
 
-- @posts.each do |post|
-  .columns
-    .column.is-four-fifths
-      .card
-        .card-content
-          .media
-            .media-content
-              a href=("#{post_path(id: post.id)}") 
-                p.title.is-4= post.author
-          p
-            | Autor: #{post.author} - #{post.created_at.strftime("%d/%m/%Y")}
+.container
+  - @posts.each do |post|
+    .posts
+      a href=("#{post_path(id: post.id)}") =post.title
+      p= post.subtitle

@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-margin
+  button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button" 
+    span.navbar-toggler-icon
+  #navbarTogglerDemo02.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link href="/" 
+          | 💻 Blog
+      li.nav-item
+        a.nav-link href="/posts/new" 
+          | 📖 Readme
+      - if user_signed_in?
+        li.nav-item
+          a.nav-link href="/posts/new" 
+            | + Nova Publicação
+        li.nav-item 
+          a.nav-link href="/categories/new" 
+            | + Nova Categoria  
+    - if user_signed_in?
+      span.navbar-text
+        = link_to "Sair", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark btn-sm'
+
