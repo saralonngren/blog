@@ -18,4 +18,7 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
-import 'bulma/css/bulma.css'
+
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
