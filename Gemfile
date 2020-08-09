@@ -15,7 +15,6 @@ gem 'devise'
 gem 'enumerize', '~> 2.1', '>= 2.1.2'
 gem 'slim', '~> 4.0.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
-gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
