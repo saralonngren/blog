@@ -1,14 +1,14 @@
 p#notice = notice
-.container
+.container-sm
   .row
     .col-sm-12
       h2.index-title Oi! Seja Bem-vindo 👋🏻
-.container.categories-container
+.container-sm.categories-container
   .row
     .col-sm-12
       h3.index-categories-title Estou escrevendo sobre: 
 
-.container
+.container-sm
   - @posts.each do |post|
     .posts
       a href=("#{post_path(id: post.id)}") =post.title
