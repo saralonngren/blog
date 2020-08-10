@@ -1,0 +1,39 @@
+= form_with(model: post, local: true) do |form|
+  - if post.errors.any?
+    #error_explanation
+      h2
+        = pluralize(post.errors.count, "error")
+        | prohibited this post from being saved:
+      ul
+        - post.errors.full_messages.each do |message|
+          li= message
+  .container-sm
+    h2 Novo Post
+    .file
+      label.file-label
+        = form.file_field :featured_image, class: 'file-input'
+        span.file-cta
+          span.file-icon
+            i.fas.fa-upload
+          span.file-label
+            | Escolha a imagem de destaque…
+    .field
+      = form.label 'Título', class: 'label'
+      .control
+        = form.text_field :title, class: 'form-control'
+    .field
+      = form.label 'Subtítulo', class: 'label'
+      .control
+        = form.text_field :subtitle, class: 'form-control'
+    .field
+      = form.label 'Autor', class: 'label'
+      .control
+        = form.text_field :author, class: 'form-control'
+    .field.mp32
+      = form.label 'Conteúdo', class: 'label'
+      = form.rich_text_area :content
+  .container-sm.mp32
+    .field
+      .control.btn-group
+        = form.submit 'Criar', class: 'btn btn-info'
+        = link_to 'Voltar', posts_path, class: 'btn btn-secondary '
