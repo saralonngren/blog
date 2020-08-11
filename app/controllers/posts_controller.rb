@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @categories_with_posts = Category.all.pluck(:name)
   end
 
   # GET /posts/1

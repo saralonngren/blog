@@ -13,11 +13,13 @@ class Post < ApplicationRecord
   has_one_attached :featured_image
   has_rich_text :content
 
-  has_many :categories
+  has_and_belongs_to_many :categories
 
-  def reading_time
-    words_per_minute = 150
-    text = Nokogiri::HTML(self.content.body).inner_text
-    (text.scan(/\w+/).length / words_per_minute).to_i
-  end
+  scope :with_categories, -> { includes(:categories).where.not(categories: { id: nil }) }
+
+  # def reading_time
+  #   words_per_minute = 150
+  #   text = Nokogiri::HTML(self.content.body).inner_text
+  #   (text.scan(/\w+/).length / words_per_minute).to_i
+  # end
 end

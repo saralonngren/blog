@@ -9,6 +9,8 @@
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
+  has_and_belongs_to_many :posts
+
   validates :name, presence: true
   validates :color, presence: true
 end
