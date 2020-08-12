@@ -1,0 +1,10 @@
+.container
+  .row
+    h1.post-title= @post.title
+  .row
+    figure
+      = image_tag @post.featured_image, class: 'img-fluid rounded mx-auto d-block', alt: 'Responsive image'
+  .row
+    .columns
+      .column.is-three-quarters
+        = raw @post.content
