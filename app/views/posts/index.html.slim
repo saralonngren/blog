@@ -14,4 +14,5 @@ p#notice = notice
   - @posts.each do |post|
     .posts
       a href=("#{post_path(id: post.id)}") =post.title
-      p= post.subtitle
+      p.subtitle-index= post.subtitle
+      p.reading-time= "#{post.reading_time} min de leitura"

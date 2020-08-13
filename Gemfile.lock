@@ -251,6 +251,7 @@ DEPENDENCIES
   pry (~> 0.10.3)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
+  rails-html-sanitizer
   sass-rails (>= 6)
   selenium-webdriver
   slim (~> 4.0.1)
