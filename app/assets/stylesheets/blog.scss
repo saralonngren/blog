@@ -50,3 +50,10 @@ body {
 .reading-time {
   font-size: 0.9rem;
 }
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #131313;
+  border-color: #131313;
+}
