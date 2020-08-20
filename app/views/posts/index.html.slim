@@ -16,3 +16,5 @@ p#notice = notice
       a href=("#{post_path(id: post.id)}") =post.title
       p.subtitle-index= post.subtitle
       p.reading-time= "#{post.reading_time} min de leitura"
+
+  == render partial: 'shared/pagination', locals: {pagy: @pagy}

@@ -17,6 +17,8 @@ gem 'slim', '~> 4.0.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'jquery-rails'
 gem 'rails-html-sanitizer'
+gem 'ransack'
+gem 'pagy', '~> 3.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
