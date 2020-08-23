@@ -16,8 +16,6 @@ class Post < ApplicationRecord
   has_and_belongs_to_many :categories
   accepts_nested_attributes_for :categories
 
-  scope :with_categories, -> { includes(:categories).where.not(categories: { id: nil }) }
-
   def reading_time
     words_per_minute = 150
     text = Nokogiri::HTML(self.content.body.html_safe).inner_text

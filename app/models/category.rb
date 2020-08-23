@@ -13,4 +13,6 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
   validates :color, presence: true
+
+  scope :with_posts, -> { includes(:posts).where.not(posts: { id: nil }) }
 end

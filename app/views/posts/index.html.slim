@@ -8,7 +8,7 @@ p#notice = notice
     .col-sm-12
       h3.index-categories-title Estou escrevendo sobre:
       - @categories_with_posts.each do |category|
-        a.badge.badge-pill.badge-info.category-pill href="#" = category
+        a.badge.badge-pill.badge-info.category-pill href="categories/#{category.name}" = category.name
 
 .container
   - @posts.each do |post|

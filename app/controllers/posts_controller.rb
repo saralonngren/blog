@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @pagy, @posts = pagy(Post.all)
-    @categories_with_posts = Category.all.pluck(:name)
+    @categories_with_posts = Category.with_posts
   end
 
   def show
