@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:create, :edit, :new, :update]
 
   def index
     @pagy, @posts = pagy(Post.all)
@@ -18,15 +19,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    
+    categories_params['categories'].reject(&:empty?).each do |category_id|
+      category = Category.find(category_id.to_i)
+      @post.categories << category
+    end
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to @post, notice: 'Post was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -56,8 +58,16 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.all
+    end
+
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :subtitle, :author, :featured_image, :content, :categories)
+      params.require(:post).permit(:title, :subtitle, :author, :featured_image, :content)
+    end
+
+    def categories_params
+      params.require(:post).permit(categories: [])
     end
 end

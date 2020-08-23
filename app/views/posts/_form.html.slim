@@ -29,6 +29,11 @@
       = form.label 'Autor', class: 'label'
       .control
         = form.text_field :author, class: 'form-control'
+    .field
+      = form.label 'Categorias', class: 'label'
+      .control
+        = form.select :categories, options_from_collection_for_select(@categories, 'id', 'name'), {}, {class: 'form-control', multiple: true, required: true } 
+        / = form.select :categories, options_for_select(@categories.pluck(:name)), {}, {class: 'form-control', multiple: true, required: true } 
     .field.mp32
       = form.label 'Conteúdo', class: 'label'
       = form.rich_text_area :content

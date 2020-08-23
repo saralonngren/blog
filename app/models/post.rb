@@ -14,6 +14,7 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   has_and_belongs_to_many :categories
+  accepts_nested_attributes_for :categories
 
   scope :with_categories, -> { includes(:categories).where.not(categories: { id: nil }) }
 
