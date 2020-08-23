@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'rails-html-sanitizer'
 gem 'ransack'
 gem 'pagy', '~> 3.5'
+gem "font-awesome-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
