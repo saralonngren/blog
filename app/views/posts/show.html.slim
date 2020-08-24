@@ -4,12 +4,10 @@
   p.reading-time
     = "#{@post.created_at.strftime("%d.%m.%Y")} 🍵 #{@post.reading_time} min de leitura "
     - @post.categories.each do |category|
-      a.badge.badge-pill.badge-info.mp8-left href="categories/#{category.name}" = category.name
+      a.badge.badge-pill.badge-info.mp8-left href="/categories/#{category.name}" = category.name
 
   .row
     figure.mx-auto.post-image-margin
       = image_tag @post.featured_image, class: 'img-fluid d-block post-image ', alt: 'Responsive image'
-  .row
-    .columns
-      .column.is-three-quarters
-        = raw @post.content
+  .post-content
+    = raw @post.content
