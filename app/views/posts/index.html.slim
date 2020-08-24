@@ -13,7 +13,7 @@ p#notice = notice
 .container
   - @posts.each do |post|
     .posts
-      a.index-post-title href=("#{post_path(id: post.id)}") =post.title
+      a.list-post-title href=("#{post_path(id: post.id)}") =post.title
       p.subtitle-index= post.subtitle
       p.reading-time
         a.badge.badge-pill.badge-info href="categories/#{post.categories.first.name}" = post.categories.first.name
