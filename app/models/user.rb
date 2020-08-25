@@ -23,8 +23,8 @@ class User < ApplicationRecord
   
   has_one_attached :avatar
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :validatable,
+         :recoverable, :rememberable
 
   # For future comments
   enumerize :role, in: [:admin, :user], default: :user
