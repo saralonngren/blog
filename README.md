@@ -11,3 +11,5 @@ Caso você queira utilizar ele para poder ter como base para seu blog, saiba que
 Ele ainda está na sua fase inicial, muita coisa ainda será implementada.
 
 Qualquer sugestão, só entrar em contato comigo 👾
+
+Update: Acabou que se tornou mais interessante utilizar jekyll para a criação de um blog, então as atualizações nesse repositório irão demorar um pouco mais para serem feitas, tendo em vista que meu foco será em outro repositório.
